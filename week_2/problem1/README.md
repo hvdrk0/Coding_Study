@@ -19,7 +19,7 @@ https://school.programmers.co.kr/learn/courses/30/lessons/258711
 입력은 [[1,2],[3,4]]와 같은 형태로 edges가 주어지며, 출력은 [시작vertex, #도넛모양, #막대모양, #8자모양]이다.
 
 
-###생각
+##생각
 
 
 
