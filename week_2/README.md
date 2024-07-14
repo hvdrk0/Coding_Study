@@ -1,4 +1,4 @@
-# 2ì£¼ì°¨
+# 2ÁÖÂ÷
 
-## ë¬¸ì œ1 ë„ë„›ê³¼ ë§‰ëŒ€ê·¸ë˜í”„
+## ¹®Á¦1. µµ³Ó°ú ¸·´ë±×·¡ÇÁ
 https://school.programmers.co.kr/learn/courses/30/lessons/258711
