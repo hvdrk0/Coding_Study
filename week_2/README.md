@@ -1,4 +1,7 @@
-# 2ÁÖÂ÷
+# 2ì£¼ì°¨
 
-## ¹®Á¦1. µµ³Ó°ú ¸·´ë±×·¡ÇÁ
+## ë¬¸ì œ1. ë„ë„›ê³¼ ë§‰ëŒ€ê·¸ë˜í”„
 https://school.programmers.co.kr/learn/courses/30/lessons/258711
+
+ë„ë„›ëª¨ì–‘:
+![image](https://github.com/user-attachments/assets/011d281f-9d13-4b00-a7cc-0c0fd487bc3e)
