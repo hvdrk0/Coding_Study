@@ -22,7 +22,7 @@ https://school.programmers.co.kr/learn/courses/30/lessons/258711
 
 제한사항
 
-![image](https://github.com/user-attachments/assets/128b922a-3eee-4af8-94cc-e7e3159a4a50)
+<img src="https://github.com/user-attachments/assets/128b922a-3eee-4af8-94cc-e7e3159a4a50" alt="image" style="width: 50%; height: 50%;">
 
 ## 풀이
 
@@ -32,8 +32,7 @@ https://school.programmers.co.kr/learn/courses/30/lessons/258711
 
 no incomming edge. only outgoing edges
 
-다만, 해당 조건은 막대모양의 시작점도 동일한 특성을 보유.
-
+> 다만, 해당 조건은 막대모양의 시작점도 동일한 특성을 보유.
 제한조건에서 그래프의 개수가 2개 이상이므로 starting node는 최소 2개 이상의 outgoing edge를 가지지만, 막대모양의 시작점은 outgoing edge가 한 개 뿐임
 
 #### 그래프
