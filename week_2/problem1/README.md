@@ -54,6 +54,7 @@ no incomming edge. only outgoing edges
 
 ## 코드
 
+```
 def solution(edges):
     incomming, outgoing = counting_edges(edges)
     answer = counting(incomming,outgoing)
@@ -90,7 +91,7 @@ def counting(incomming, outgoing):
     d_num=outgoing[starting_vertex - 1] - bar_num - eight_num
 
     return [starting_vertex, d_num, bar_num, eight_num]
-    
+```    
 
 
 
