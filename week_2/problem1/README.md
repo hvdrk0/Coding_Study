@@ -1,5 +1,7 @@
 # 문제1. 도넛과 막대그래프
 
+프로그래머스 레벨 2
+
 https://school.programmers.co.kr/learn/courses/30/lessons/258711
 
 ## 문제설명
@@ -93,5 +95,12 @@ def counting(incomming, outgoing):
     return [starting_vertex, d_num, bar_num, eight_num]
 ```    
 
+## 후기
 
+1시간이나 걸렸음. 생각보다 오래걸림
 
+문제 구상할 때 DFS로 풀려고 해서 시작이 꼬인게 큰 듯
+
+DFS로 할 수는 있지만 지금 푼 풀이보다 복잡하고, 어차피 해당 사고를 포함할 것으로 추정
+
+또한 코드 구현에도 좀 헤맨 감이 있는데 기본기가 모자란 것 같으니 레벨 1과 2를 병행하는 방향으로 잡을 예정
