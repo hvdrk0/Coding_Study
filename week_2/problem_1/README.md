@@ -1,4 +1,4 @@
-#╧╝а╕ 1 : ╣╣Ёс╟З ╦╥╢К╠в╥║га
+#К╛╦Л═° 1. К▐└К└⌡ЙЁ╪ К╖┴К▄─Й╥╦К·≤М■└
 
 https://school.programmers.co.kr/learn/courses/30/lessons/258711
 
