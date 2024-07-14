@@ -46,7 +46,7 @@ no incomming edge. only outgoing edges
 
 - **8자모양** : intersection vertex 에는 두 개의 outgoing edges가 있음. incomming의 경우 starting vertex와 연결될 경우 
 
-- **도넛모양** : 나머지
+- **도넛모양** : 모두 outgoing은 1개씩, incomming은 기본 1개, starting node와 연결되면 2개인데 위의 두 그래프의 vertex들과 겹침. 따라서 위의 두 경우가 아닌 것으로 결정
 
 ### 구현
 
