@@ -2,6 +2,7 @@
 https://school.programmers.co.kr/learn/courses/30/lessons/258711
 
 ##문제 설명
+
 도넛모양:simple cycle graph
 
 <img src="https://github.com/user-attachments/assets/011d281f-9d13-4b00-a7cc-0c0fd487bc3e" alt="image" style="width: 50%; height: 50%;">
