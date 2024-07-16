@@ -1,8 +1,8 @@
-# 문제2. 가장 많이 받은 선물
+# 문제3. [PCCP 기출문제] 1번 / 붕대 감기
 
 프로그래머스 레벨 1
 
-[https://school.programmers.co.kr/learn/courses/30/lessons/258711](https://school.programmers.co.kr/learn/courses/30/lessons/258712)
+https://school.programmers.co.kr/learn/courses/30/lessons/250137
 
 ## 문제설명
 
