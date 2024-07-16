@@ -72,4 +72,32 @@ def split(gifts):
     splited_string=[gift.split(' ',1) for gift in gifts]
     return splited_string
 
-def translation(friends, 것
+def translation(friends, splited_string):
+    splited=[[friends.index(friend) for friend in pair] for pair in splited_string]
+    return splited
+    
+
+def make_array(splited,n):
+    recieved=np.zeros((n,n))
+    total = np.zeros(n)
+    for pair in splited:
+        recieved[pair[1]][pair[0]]+=1
+        total[pair[0]]+=1
+        total[pair[1]]-=1
+    return recieved, total
+
+def cal(recieved,total):
+    n=len(recieved)
+    recieve=np.zeros(n)
+    for i in range(n-1):
+        for j in range(i+1,n):
+            if recieved[i][j] > recieved[j][i]:
+                recieve[j]+=1
+            elif recieved[i][j] < recieved[j][i]:
+                recieve[i]+=1
+            elif total[i] > total[j]:
+                recieve[i]+=1
+            elif total[i] < total[j]:
+                recieve[j]+=1
+    return recieve
+```
