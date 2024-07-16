@@ -6,25 +6,29 @@
 
 ## 문제설명
 
-도넛모양:simple cycle graph
+두 사람이 선물을 주고받은 기록이 있다면, 이번 달까지 두 사람 사이에 더 많은 선물을 준 사람이 다음 달에 선물을 하나 받음
 
-<img src="https://github.com/user-attachments/assets/011d281f-9d13-4b00-a7cc-0c0fd487bc3e" alt="image" style="width: 50%; height: 50%;">
+두 사람이 선물을 주고받은 기록이 하나도 없거나 주고받은 수가 같다면, 선물 지수가 더 큰 사람이 선물 지수가 더 작은 사람에게 선물을 하나 받음
 
-막대모양
+선물지수: #준선물 - #받은선
 
-<img src="https://github.com/user-attachments/assets/8fefe073-c5fa-4a88-bec9-750521b8dff6" alt="image" style="width: 50%; height: 50%;">
+두 사람의 선물 지수도 같다면 다음 달에 선물을 주고받지 않음
 
-8자모양
+다음달에 선물을 가장 많이 받을 친구가 받을 선물의 수 구하기
 
-<img src="https://github.com/user-attachments/assets/877a0b36-13e6-45a8-9a6d-eee0e687f39f" alt="image" style="width: 50%; height: 50%;">
+### 입력
 
-위 세 모양의 sub graph들이 있고, 새로운 한 vertex는 각 subgraph에 임의의 한 vertex를 destination으로 하는 edge로 연결되어 있다.
+friends : 사람 이름. ['a','b',...]
 
-입력은 [[1,2],[3,4]]와 같은 형태로 edges가 주어지며, 출력은 [시작 vertex, #도넛모양, #막대모양, #8자모양]이다.
+gifts : 선물 주고 받은 기록. ['준사람 받은사람', '준사람 받은사람' ,...]
 
-제한사항
+### 출력
 
-<img src="https://github.com/user-attachments/assets/128b922a-3eee-4af8-94cc-e7e3159a4a50" alt="image" style="width: 50%; height: 50%;">
+answer : 다음달에 선물을 가장 많이 받을 친구가 받을 선물의 수
+
+### 제한사항
+
+<img src="https://github.com/user-attachments/assets/a5e8b964-1fe5-4f2a-826c-6e8cefe082d4" alt="image" style="width: 50%; height: 50%;">
 
 ## 풀이
 
