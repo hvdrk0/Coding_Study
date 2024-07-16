@@ -6,105 +6,62 @@ https://school.programmers.co.kr/learn/courses/30/lessons/250137
 
 ## 문제설명
 
-두 사람이 선물을 주고받은 기록이 있다면, 이번 달까지 두 사람 사이에 더 많은 선물을 준 사람이 다음 달에 선물을 하나 받음
+붕대감기 : t초동안 붕대를 감으면서 초당 x 만큼 체력 회복. 공격받으면 채널링 끊어짐. 끊기면 처음부터 다시 시작. t초동안 채널링 끊기지 않으면 추가로 y만큼 회복.
 
-두 사람이 선물을 주고받은 기록이 하나도 없거나 주고받은 수가 같다면, 선물 지수가 더 큰 사람이 선물 지수가 더 작은 사람에게 선물을 하나 받음
+1초에 공격받으면 2초부터 다시 시작
 
-선물지수: #준선물 - #받은선
+최대체력으로 시작
 
-두 사람의 선물 지수도 같다면 다음 달에 선물을 주고받지 않음
-
-다음달에 선물을 가장 많이 받을 친구가 받을 선물의 수 구하기
+모든 공격이 끝나고 남은 체력 양 확인. 그 전에 죽으면 -1 출력
 
 ### 입력
 
-friends : 사람 이름. ['a','b',...]
+bandage : 붕대감기 스펙. [채널링 시간, 초당 회복량, 추가회복량]
 
-gifts : 선물 주고 받은 기록. ['준사람 받은사람', '준사람 받은사람' ,...]
+healths : 최대체력
+
+attacks : 공격 정보. [공격시간, 데미지]
 
 ### 출력
 
-answer : 다음달에 선물을 가장 많이 받을 친구가 받을 선물의 수
+answer : 남은체력. 만약 죽었으면 -1
 
 ### 제한사항
 
-<img src="https://github.com/user-attachments/assets/a5e8b964-1fe5-4f2a-826c-6e8cefe082d4" alt="image" style="width: 50%; height: 50%;">
+<img src="https://github.com/user-attachments/assets/ecf5c911-16b9-4f63-ba94-386333fda1bf" alt="image" style="width: 50%; height: 50%;">
 
 ## 풀이
 
-### 전처리?
-
-입력 gifts를 다루기 편하게 변환
-
-['준사람 받은사람', '준사람 받은사람' ,...] 을 [[준사람index, 받은사람index], [준사람index, 받은사람index], ...] 형태로 변환
-
-우선 string을 ' '기준으로 나누고 index로 바꾸기
-
-### 선물 기록 정리
-
-누가 누구에게 몇개를 받았는지 n * n 행렬로 재구성, 선물지수 계산
-
-행렬에서 row : 받은 사람, column : 준 사람
-
-### 계산
-
-행렬과 선물지수를 이용해 모든 사람의 pair에서 누가 받을지를 계산
-
-### 출력
-
-가장 많이 받는 사람의 선물 개수를 출력
+공격받은 시간 - 마지막 공격 받은 시간 - 1 초동안 붕대 감음 -> 그에 맞는 체력 회복
 
 ## 코드
 
 ```
-import numpy as np
-
-def solution(friends, gifts):
-    n=len(friends)
-    splited_string=split(gifts)
-    splited=translation(friends, splited_string)
-    recieved,total= make_array(splited,n)
-    recieve=cal(recieved,total)
-    answer = max(recieve)
+def solution(bandage, health, attacks):
+    last_attack=0
+    hp=health
+    for atk in attacks:
+        hp=heal(health, hp, atk[0]-last_attack-1, bandage)
+        hp-=atk[1]
+        last_attack=atk[0]
+        if hp<=0:
+            hp=-1
+            break
+    answer = hp
     return answer
 
-def split(gifts):
-    splited_string=[gift.split(' ',1) for gift in gifts]
-    return splited_string
-
-def translation(friends, splited_string):
-    splited=[[friends.index(friend) for friend in pair] for pair in splited_string]
-    return splited
-    
-
-def make_array(splited,n):
-    recieved=np.zeros((n,n))
-    total = np.zeros(n)
-    for pair in splited:
-        recieved[pair[1]][pair[0]]+=1
-        total[pair[0]]+=1
-        total[pair[1]]-=1
-    return recieved, total
-
-def cal(recieved,total):
-    n=len(recieved)
-    recieve=np.zeros(n)
-    for i in range(n-1):
-        for j in range(i+1,n):
-            if recieved[i][j] > recieved[j][i]:
-                recieve[j]+=1
-            elif recieved[i][j] < recieved[j][i]:
-                recieve[i]+=1
-            elif total[i] > total[j]:
-                recieve[i]+=1
-            elif total[i] < total[j]:
-                recieve[j]+=1
-    return recieve
+def heal(max_hp, hp, time, bandage):
+    n=time//bandage[0]
+    m=time%bandage[0]
+    heals=n*(bandage[0]*bandage[1]+bandage[2]) + m*bandage[1]
+    after=hp+heals
+    if after>max_hp:
+        return max_hp
+    else:
+        return after
 ```
 ## 후기
 
-레벨 1에서 가장 어려운 문제
+레벨 1 치고도 좀 쉬운듯
 
-40분 걸림. 알고리즘 구상은 금방 했지만 코드 구현에서 오래걸림. 코딩 미숙
-
-많이 풀어보면서 능숙해질것
+이번에는 헤메지 않고 바로 해서 10분 안에 성공
