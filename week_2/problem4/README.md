@@ -79,7 +79,7 @@ def extract(land,loc,extracted):
 
 solution 함수의 outer loop에서 extract는 최대 mn번 호출
 
-extract 그 자체는 O(1)
+extract에서 재호출 재외 그 자체는 O(1)
 
 해당 과정이 m번 반복되므로 전체 time complexity는 O(m^2 n)
 
