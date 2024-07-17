@@ -14,7 +14,15 @@ https://school.programmers.co.kr/learn/courses/30/lessons/250136
 
 관의 위치에 따른 시추 가능한 최대값 찾기
 
-제한사항
+### 입력
+
+land : 땅의 정보. [[...], [...], ...]. 0이면 없음, 1이면 있음
+
+### 출력
+
+answer : 시추 가능한 최대값
+
+### 제한사항
 
 <img src="https://github.com/user-attachments/assets/24d9ff90-d080-411c-beae-67c253b66926" alt="image" style="width: 50%; height: 50%;">
 
@@ -77,7 +85,7 @@ extract 그 자체는 O(1)
 
 #### Optimal substructure?, Overlapping subproblem?
 
-관이 i째 열에 있고, i열 j,k행 만이 석유 블럭이라고 가정하자.
+관이  열에 있고, i열 j,k행 만이 석유 블럭이라고 가정하자.
 
 이 때 optimal substructure, overlapping subproblem이 성립한다면 solution=extract_only(i,j)+extract_only(i,k)이다 (각 함수는 독립적으로 시행)
 
@@ -88,6 +96,8 @@ extract_only(i,j)=2, extract_only(i,k)=2인데, solution=2이다.
 #### 고찰
 
 따라서 알고리즘을 바꾸는 방향으로 진행해야 한다.
+
+우선 land를 탐색한 ㅎ에 
 
 ## 풀이 2. DFS
 
