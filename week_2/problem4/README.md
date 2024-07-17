@@ -85,9 +85,9 @@ extract 그 자체는 O(1)
 
 매우 비효율적이고 실제로 정확도는 100이지만 효율성에서 실패
 
--> Dynamic algolitm이나 다른 알고리즘 사용
+-> Dynamic Programming이나 다른 알고리즘 사용
 
-### Dynamic Algoritm
+### Dynamic Programming
 
 #### Optimal substructure?, Overlapping subproblem?
 
