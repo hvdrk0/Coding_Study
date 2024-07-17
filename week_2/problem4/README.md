@@ -36,6 +36,12 @@ answer : 시추 가능한 최대값
 
 ### 관을 모든 위치에 설정하고 최대값 찾기
 
+### 전처리
+
+land는 리스트 형태인데 파이썬 기본 리스트에서는 linked list가 아닌 array list라서 수정할 필요는 없을듯.
+
+c++의 list라면 인덱스 접근에 O(n)이 소요되서 array로 바꾸는게 이득.
+
 ### 코드
 
 ```
@@ -99,15 +105,15 @@ extract_only(i,j)=2, extract_only(i,k)=2인데, solution=2이다.
 
 우선 land를 탐색한 후에 석유가 있는 block들을 인접한 석유block과 덩어리로 묶는다. 이후 관과 겹치는 묶음을 찾아 그 값을 반환한다
 
--> 각 block을 node로, 인접한 석유block끼리 edge를 형성한 후 DFS로 덩어리를 만든다
+-> 각 block을 node로, 인접한 석유block끼리 edge를 형성한 후 DFS로 덩어리를 만든다?
 
-## 풀이 2. DFS
+-> edge를 linked list로 만들고 DFS? edge를 만들 때 바로 처리할 수도 있을듯.
 
-### 전처리
+## 풀이 2 덩어리
 
-land는 리스트 형태인데 파이썬 기본 리스트에서는 linked list가 아닌 array list라서 수정할 필요는 없을듯.
+n*m 배열을 새로 만들고 탐색하면서 덩어리를 만들고 그 index를 배열에 저장
 
-c++의 list라면 인덱스 접근에 O(n)이 소요되서 array로 바꾸는게 이득.
+만들어진 덩어리의 석유 개수도 갱신
 
 ## 후기
 
