@@ -77,7 +77,7 @@ def extract(land,loc,extracted):
 
 ### 분석
 
-solution 함수의 outer loop에서 extract는 최대 mn번 호출
+solution 함수의 outer loop에서 extract는 최대 4mn번 호출
 
 extract에서 재호출 재외 그 자체는 O(1)
 
