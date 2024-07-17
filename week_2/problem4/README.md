@@ -97,7 +97,9 @@ extract_only(i,j)=2, extract_only(i,k)=2인데, solution=2이다.
 
 따라서 알고리즘을 바꾸는 방향으로 진행해야 한다.
 
-우선 land를 탐색한 ㅎ에 
+우선 land를 탐색한 후에 석유가 있는 block들을 인접한 석유block과 덩어리로 묶는다. 이후 관과 겹치는 묶음을 찾아 그 값을 반환한다
+
+-> 각 block을 node로, 인접한 석유block끼리 edge를 형성한 후 DFS로 덩어리를 만든다
 
 ## 풀이 2. DFS
 
