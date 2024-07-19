@@ -28,11 +28,13 @@ answer : 필요한 요격 미사일 수의 최솟값
 
 ## 풀이
 
-끝 좌표 순서로 sort하고 끝좌표와 그보다 앞에있는 다음 미사일의 시작좌표중 최대값 사이에 요격 미사일을 배치(Greedy Algorithm)
+끝 좌표 순서로 sort하고 끝좌표보다 약간 앞에 요격 미사일을 배치(Greedy Algorithm)
 
 ### Greedy Algorithm 증명
 
 #### Greedy Choice Property
+
+sorted_targets T에서 T[0]의 끝점에 대해 
 
 #### Optimal Substructure
 
