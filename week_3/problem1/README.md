@@ -8,7 +8,7 @@ https://school.programmers.co.kr/learn/courses/30/lessons/181188
 
 미사일은 [시작x좌표, 끝x좌표] 형태로 나타냄
 
-요격미사일은 해당 x좌표에 있는 모든 미사일을 요격함
+요격미사일은 해당 x좌표에 있는 모든 미사일을 요격함(단, 정확히 시작좌표와 끝좌표면 요격 불가)
 
 필요한 요격 미사일의 최솟값
 
@@ -29,6 +29,12 @@ answer : 필요한 요격 미사일 수의 최솟값
 ## 풀이
 
 끝 좌표 순서로 sort하고 끝좌표와 그보다 앞에있는 다음 미사일의 시작좌표중 최대값 사이에 요격 미사일을 배치(Greedy Algorithm)
+
+### Greedy Algorithm 증명
+
+#### Greedy Choice Property
+
+#### Optimal Substructure
 
 ### 코드
 
