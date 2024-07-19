@@ -68,9 +68,9 @@ def extract(land,loc,extracted):
         if land[loc[0]][loc[1]] != 0:
             total+=1
             land[loc[0]][loc[1]]=0
-            neibor=[[loc[0]+1,loc[1]], [loc[0],loc[1]+1],
+            neighbor=[[loc[0]+1,loc[1]], [loc[0],loc[1]+1],
                    [loc[0]-1,loc[1]], [loc[0],loc[1]-1]]
-            for n in neibor:
+            for n in neighbor:
                 total=extract(land,n,total)
     return total
 ```
