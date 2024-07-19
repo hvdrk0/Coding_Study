@@ -1,4 +1,4 @@
-# 2주차
+# 3주차
 
 ## 문제1. 요격 시스템
 문제 : https://school.programmers.co.kr/learn/courses/30/lessons/181188
