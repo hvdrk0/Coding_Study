@@ -30,7 +30,7 @@ answer : 필요한 요격 미사일 수의 최솟값
 
 끝 좌표 순서로 sort하고 cover되지 않은 미사일의 끝좌표보다 약간 앞(epsilon, e)에 요격 미사일을 배치(Greedy Algorithm)
 
-### Greedy Algorithm Correctness
+### Correctness of Greedy Algorithm
 
 #### Greedy Choice Property
 
