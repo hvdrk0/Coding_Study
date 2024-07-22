@@ -69,11 +69,23 @@ O'와 O-{g0}는 모두 T-GT0를 cover하고, 정의에 의해 O'는 T-GT0의 opt
 #### 따라서 greedy algorithm을 사용할 수 있다.
 
 ### 코드
-
 ```
-
+def solution(targets):
+    answer = 0
+    T=sorted(targets, key=lambda x: x[1])
+    ## 주석처리한 부분은 미사일 전체를 출력하고 싶을 때
+    # G=[T[0][1]]
+    g=T[0][1]
+    answer=1
+    for t in T[1:]:
+        # if t[0] >= G[-1]:
+        #     G.append(t[1])
+        if t[0] >= g:
+            g=t[1]
+            answer+=1
+    # answer=len(G)
+    return answer
 ```
-
 ### 분석
 
 
