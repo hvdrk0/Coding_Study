@@ -1,8 +1,8 @@
-# 문제1. 요격 시스템
+# 문제2. 
 
 프로그래머스 레벨 2
 
-https://school.programmers.co.kr/learn/courses/30/lessons/181188
+
 
 ## 문제설명
 
