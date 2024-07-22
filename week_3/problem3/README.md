@@ -95,9 +95,42 @@ def solution(sequence, k):
 ```
 ### 분석
 
-#### 증명
+#### Correctness
+
+while문의 첫째 줄에서 가능한 모든 subsequence가 고려된다
+
+proof)
+
+1. 모든 index i에 대해, i가 starting_idx일 때 
+
+고려되지 않은 subsequence가 있다고 할 때 해당 subsequence의 시작 인덱스를 s, 끝을 f라고 하자.
 
 loop invariant : 
 
+initial : 
+
+maintenance:
+
+termination
+
 ## 후기
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
