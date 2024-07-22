@@ -56,7 +56,7 @@ greedy choice로 선택된 첫 번째 좌표를 g0라고 하고, g0에 의해 co
 
 |{g0} ∪ O'| > |O| 라고 하자.(즉, G가 optimal solution이 아니라고 하자.)  --(1)
 
-O'와 O-{g0}는 모두 T-GT0를 cover하고, 정의에 의해 O'는 T-GT0의 optimal solution이므로 |O'| <= |O-{go}|이므로 O에서 O-{g0}를 O'로 대체할 수 있고,
+O'와 O-{g0}는 모두 T-GT0를 cover하고, 정의에 의해 O'는 T-GT0의 optimal solution이므로 |O'| <= |O-{g0}|이므로 O에서 O-{g0}를 O'로 대체할 수 있고,
 
 |O| >= |{g0} ∪ O'|이다.  --(2)
 
