@@ -92,7 +92,7 @@ sorting에서 O(n lgn)  (radix sort의 경우 O(n), memory complexity 증가)
 
 for문 안은 O(1)이므로 for문 전체는 O(n)
 
-따라서 전체 O(n)
+따라서 전체 O(n lgn) (radix sort를 하면 O(n))
 
 ## 후기
 
