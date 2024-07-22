@@ -42,7 +42,7 @@ M에 의해 cover되는 미사일의 set을 MT(=T), M[0]에 의해 cover되는 �
 
 M0[0].s <= M0[1].s <= ... <. M0[-1].s < M[0] < g0 < M0[0].f = T[0].f 이므로 MT0 ⊂ GT0 이다.
 
-M' = {M-M[0]} ∪ {g0} 일 때 M'에 의해 cover되는 미사일의 set을 M'T라고 할 때, 
+M' = M-{M[0]} ∪ {g0} 일 때 M'에 의해 cover되는 미사일의 set을 M'T라고 할 때, 
 
 |T| = |MT| = |MT - MT0 ∪ MT0| <= |MT - MT0 ∪ GT0| = |M'T| <= |T| 이므로 |M'T| = |T| 이다.
 
