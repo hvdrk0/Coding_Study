@@ -30,7 +30,7 @@ answer : 필요한 요격 미사일 수의 최솟값
 
 끝 좌표 순서로 sort하고 cover되지 않은 미사일의 끝좌표보다 약간 앞(epsilon, e)에 요격 미사일을 배치(Greedy Algorithm)
 
-### Greedy Algorithm 증명
+### Greedy Algorithm Correctness
 
 #### Greedy Choice Property
 
@@ -51,6 +51,22 @@ M' = {M-M[0]} ∪ {g0} 일 때 M'에 의해 cover되는 미사일의 set을 M'T�
 따라서 Greedy Choice Property가 성립
 
 #### Optimal Substructure
+
+greedy choice로 선택된 첫 번째 좌표를 g0라고 하고, g0에 의해 cover되는 미사일의 set를 GT0, T-GT0를 cover하는 optimal solution을 O', G[0]를 포함하는 optimal solution을 O라고 할 때, 
+
+|{g0} ∪ O'| > |O| 라고 하자.(즉, G가 optimal solution이 아니라고 하자.)  --(1)
+
+O'와 O-{g0}는 모두 T-GT0를 cover하고, 정의에 의해 O'는 T-GT0의 optimal solution이므로 |O'| <= |O-{go}|이므로 O에서 O-{g0}를 O'로 대체할 수 있고,
+
+|O| >= |{g0} ∪ O'|이다.  --(2)
+
+(1)과 (2)에서 |{g0} ∪ O'| <= |O| < |{g0} ∪ O'| 이고 이는 모순이다.
+
+따라서 |{g0} ∪ O'| <= |O| 이고 O는 optimal solution이므로 |{g0} ∪ O'| >= |O| 이므로 |{g0} ∪ O'| = |O| 이다.
+
+즉, optimal substructure가 성립한다.
+
+#### 따라서 greedy algorithm을 사용할 수 있다.
 
 ### 코드
 
