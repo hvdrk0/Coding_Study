@@ -101,9 +101,27 @@ while문의 첫째 줄에서 가능한 모든 subsequence가 고려된다
 
 proof)
 
-1. 모든 index i에 대해, i가 starting_idx일 때 
+##### 1. 모든 index i에 대해, i는 한 번 이상 starting_idx인 상태로 while문 첫째 줄을 지난다.
 
-고려되지 않은 subsequence가 있다고 할 때 해당 subsequence의 시작 인덱스를 s, 끝을 f라고 하자.
+trivial
+
+##### 2. 모든 starting_idx i에 대해, i로 시작하고 합이 k가 되는 모든 subsequence는 while문의 둘째 줄을 지난다.
+
+고려되지 않은 subsequence가 있다고 할 때 해당 subsequence의 시작 인덱스를 s, 끝을 f라고 하자. (s>0)
+
+처음으로 starting_idx=s가 될 때 while문의 마지막 줄을 지났고, 다시 while문의 첫째 줄로 이동한다.
+
+이 때 
+
+1) sum<k인 경우 while문을 빠져나오고 sum>=k가 될 때 까지 for문을 거치며 끝 index를 늘려가고 sum=k가 될 때 while문의 둘째 줄을 지난다 (불가능)
+
+2) sum=k인 경우 trivial하게 불가능
+
+3) sum>k인 경우
+
+starting_idx += 1을 통해 starting_idx가 갱신된다.
+
+이 때 
 
 loop invariant : 
 
