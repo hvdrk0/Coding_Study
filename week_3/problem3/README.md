@@ -20,6 +20,9 @@ answer : 합이 k인 부분수열 중 가장 짧은 것의 시작 인덱스와 �
 
 ## 풀이
 
+incremental algorithm으로 구현
+
+기존 수열에서의 solution과 한 원소가 추가될 때 해당 원소를 포함하는 solution의 길이 비교
 
 ### 코드
 ```
