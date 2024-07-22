@@ -86,14 +86,16 @@ def solution(targets):
     # answer=len(G)
     return answer
 ```
-### 분석
+#### 분석
 
+sorting에서 O(n lgn)  (radix sort의 경우 O(n), memory complexity 증가)
 
+for문 안은 O(1)이므로 for문 전체는 O(n)
 
-#### 고찰
-
-
+따라서 전체 O(n)
 
 ## 후기
 
+greedy algorithm의 가장 기본 예제 중 하나인 activity selection problem과 매우 유사한 형태라서 금방 한듯
 
+코드 구현도 바로 해서 5분정도 걸림
