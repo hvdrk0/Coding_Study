@@ -131,7 +131,7 @@ trivial
 
 starting_idx += 1을 통해 starting_idx가 갱신된다.
 
-이 때 끝 index는 f보다 크고 f+1 (Without Loss of Generality) 라고 하면 직전상태에서 시작index는 s-1, 끝 index는 f+1이다.
+이 때 끝 index는 f보다 크고 f+m (m은 자연수) 라고 하면 직전상태에서 시작index는 s-1, 끝 index는 f+m이다.
 
 loop invariant : 루프 내에서 선택된 sequence는 끝 index를 하나 줄이면 합이 k보다 항상 작다.
 
@@ -153,9 +153,13 @@ terminate : 루프 조건을 만족하며 시작=s'', 끝=len(sequence)-2 = n-2�
 
 sum - sequence[n-1] = old_sum - ... < k 이다.
 
-따라서 sum>k도 불가능
+따라서 loop invariant가 성립
+
+그런데 시작index가 s-1, 끝 index가 f+m 인 경우 sequence[s-1]+...+sequence[f+m-1] = sequence[s-1] + k + sequence[f+1] + ... + sequence[f+m-1] > k 이므로 sum>k도 불가능
 
 모든 경우가 불가능하므로 모든 starting_idx i에 대해, i로 시작하고 합이 k가 되는 모든 subsequence는 while문의 둘째 줄을 지난다.
+
+즉, 모든 가능한 sum=k가 되는 경우가 고려된다.
 
 ## 후기
 
