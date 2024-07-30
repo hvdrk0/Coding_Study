@@ -25,7 +25,50 @@ https://www.acmicpc.net/problem/2531
 
 ### 코드
 ```
+from collections import deque
 
+import sys
+input = sys.stdin.readline
+N,d,k,c = map(int, input().split())
+arr = [int(input())-1 for _ in range(N)]
+
+c-=1
+
+q=deque()
+
+num_c=0
+n=0
+temp=0
+for i in range(k):
+    if arr[i] not in q:
+        n+=1
+    q.appendleft(arr[i])
+    if arr[i]==c:
+        num_c+=1
+temp=n+int(num_c==0)
+ans=temp
+
+
+j=k-1
+for _ in range(N):
+    j+=1
+    j=j%N
+    out=q.pop()
+    if out not in q:
+        n-=1
+    if out == c:
+        num_c-=1
+    
+    if arr[j] not in q:
+        n+=1
+    q.appendleft(arr[j])
+    if arr[j]==c:
+        num_c+=1
+    temp=n+int(num_c==0)
+    if temp>ans:
+        ans=temp
+    
+print(ans)
 ```
 #### 분석
 
