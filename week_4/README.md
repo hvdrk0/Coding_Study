@@ -5,8 +5,8 @@
 
 풀이 : https://github.com/hvdrk0/Coding_Study/blob/main/week_4/problem1
 
-## 문제2.
-문제 : 
+## 문제2. 유사 칸토어 비트열
+문제 : https://school.programmers.co.kr/learn/courses/30/lessons/148652
 
 풀이 : https://github.com/hvdrk0/Coding_Study/blob/main/week_4/problem2
 
