@@ -10,8 +10,8 @@
 
 풀이 : https://github.com/hvdrk0/Coding_Study/blob/main/week_4/problem2
 
-## 문제3. 
-문제 : 
+## 문제3. 회전 초밥
+문제 : https://www.acmicpc.net/problem/2531
 
 풀이 : https://github.com/hvdrk0/Coding_Study/blob/main/week_4/problem3
 
