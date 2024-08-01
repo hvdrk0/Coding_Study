@@ -22,6 +22,13 @@ https://www.acmicpc.net/problem/2531
 
 ## 풀이
 
+시작 인덱스에서 k개의 접시에서 초밥 종류의 개수를 n,
+
+해당 구간 내에서 c의 개수를 num_c 라고 할 때
+
+num_c가 0보다 크면 n개, 아니면 n+1개이다.
+
+이를 인덱스를 하나씩 늘려가며 최대값을 찾는다.
 
 ### 코드
 ```
@@ -30,9 +37,7 @@ from collections import deque
 import sys
 input = sys.stdin.readline
 N,d,k,c = map(int, input().split())
-arr = [int(input())-1 for _ in range(N)]
-
-c-=1
+arr = [int(input()) for _ in range(N)]
 
 q=deque()
 
@@ -72,7 +77,11 @@ print(ans)
 ```
 #### 분석
 
+각 for문 내부는 O(1), for문 제외한 부분도 O(1)이므로 전체 time complexity는 O(n)이다.
 
 ## 후기
 
+무난한 난이도지만, 백준 첫 문제이다 보니 input에서 헤매고, deque 라이브러리 사용에 시간이 걸림
+
+그냥 바로 list에서 해도 되지만 일단 한번 deque로 해봄
 
