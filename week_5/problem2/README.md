@@ -41,9 +41,6 @@ def solution(plans):
     for p in plans:
         p[1]=int(p[1][0:2])*60+int(p[1][3:])
         p[2]=int(p[2])
-    time=plans[0][1]
-    
-    for p in plans:
         while len(stack)!=0:
             if (time+stack[-1][-1])>p[1]:
                 stack[-1][-1]-=p[1]-time
@@ -55,6 +52,7 @@ def solution(plans):
                 stack.pop()
         time=p[1]
         stack.append(p)
+
 
     for _ in range(len(stack)):
         answer.append(stack.pop()[0])
