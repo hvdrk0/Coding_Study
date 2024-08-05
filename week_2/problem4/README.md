@@ -85,43 +85,64 @@ extract에서 재호출 재외 그 자체는 O(1)
 
 매우 비효율적이고 실제로 정확도는 100이지만 효율성에서 실패
 
--> Dynamic Programming이나 다른 알고리즘 사용
-
-### Dynamic Programming
-
-#### Optimal substructure?, Overlapping subproblem?
-
-관이  열에 있고, i열 j,k행 만이 석유 블럭이라고 가정하자.
-
-이 때 optimal substructure, overlapping subproblem이 성립한다면 solution=extract_only(i,j)+extract_only(i,k)이다 (각 함수는 독립적으로 시행)
-
-extract_only(i,j)=2, extract_only(i,k)=2인데, solution=2이다.
-
-따라서 모순이고 Dynamic Programming을 사용할 수 없다.
-
-#### 고찰
-
-따라서 알고리즘을 바꾸는 방향으로 진행해야 한다.
-
-우선 land를 탐색한 후에 석유가 있는 block들을 인접한 석유block과 덩어리로 묶는다. 이후 관과 겹치는 묶음을 찾아 그 값을 반환한다
-
--> 각 block을 node로, 인접한 석유block끼리 edge를 형성한 후 DFS로 덩어리를 만든다?
-
--> edge를 linked list로 만들고 DFS? edge를 만들 때 바로 처리할 수도 있을듯.
+-> Memoization 사용 (Dynamic Programming이 아님!! optimal substructure가 성립하지 않음)
 
 ## 풀이 2 덩어리
 
-n*m 배열을 새로 만들고 탐색하면서 덩어리를 만들고 그 index를 배열에 저장 -> O(mn)
+m 길이의 zero list max_ext 생성
 
-만들어진 덩어리의 석유 개수도 갱신
+land를 탐색하면서 1인 곳이 나오면 추출
 
-관의 위치마다 포함되는 덩어리 확인
+이 때 주변부 석유가 존재하면 재귀적으로 추출
 
-덩어리의 size만큼 추출가능량 계산 -> O(m)
+최종적으로 덩어리가 만들어짐
 
-최대값 출력
+이 덩어리의 가로축 좌표의 최대, 최소 사이 index에 대해 덩어리의 크기만큼 모두 max_ext에 더함
 
-전체 O(mn)
+### 코드
+```
+import sys
+sys.setrecursionlimit(1000000)
+
+def solution(land):
+    n=len(land)
+    m=len(land[0])
+    max_ext=[0]*m
+    
+    def extract(i,j,ch):
+        land[i][j]=0
+        ch[0]+=1
+        ch[1]=min(ch[1],j)
+        ch[2]=max(ch[2],j)
+        if (i!=0) and land[i-1][j]==1:
+            extract(i-1,j,ch)
+        if (i!=n-1) and land[i+1][j]==1:
+            extract(i+1,j,ch)
+        if (j!=0) and land[i][j-1]==1:
+            extract(i,j-1,ch)
+        if (j!=m-1) and land[i][j+1]==1:
+            extract(i,j+1,ch)
+
+    for i in range(n):
+        for j in range(m):
+            if land[i][j]==1:
+                chunck=[0,j,j]
+                extract(i,j,chunck)
+                for k in range(chunck[1],chunck[2]+1):
+                    max_ext[k]+=chunck[0]
+    answer=max(max_ext)
+
+    return answer
+```
+### 분석
+
+특정 위치에서 주변 위치에 대해 탐색하는 횟수는 최대 4번
+
+따라서 탐색은 최대 5*m*n회 이하로 일어남
+
+extract함수는 재귀 호출 제외 O(1)이고 메인함수에서 
+
+
 
 ## 후기
 
